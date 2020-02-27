@@ -1439,7 +1439,7 @@ namespace Microsoft.EntityFrameworkCore.Query
                              select new { c.Id, orders = context.GetCustomerOrderCountByYear(c.Id) });
 
                 Assert.Contains(
-                    RelationalStrings.DbFunctionCantProjectIQueryable(),
+                    RelationalStrings.DbFunctionCantProjectIQueryable,
                     Assert.Throws<InvalidOperationException>(() => query.ToList()).Message);
             }
         }

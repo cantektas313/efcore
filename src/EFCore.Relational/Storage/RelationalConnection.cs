@@ -642,7 +642,7 @@ namespace Microsoft.EntityFrameworkCore.Storage
 
             if (current == null) 
             {
-                var rootTransaction = _ambientTransactions.Any() && _ambientTransactions.TryPeek(out var transaction) ? transaction : null;
+                var rootTransaction = _ambientTransactions.Count > 0 && _ambientTransactions.TryPeek(out var transaction) ? transaction : null;
 
                 if (rootTransaction != null) 
                 {
